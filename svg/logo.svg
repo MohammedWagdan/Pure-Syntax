@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120">
+
+  <defs>
+    <linearGradient id="brandGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <!-- Dark -->
+      <stop offset="0%" stop-color="#0891b2"/>
+      
+      <!-- Mid -->
+      <stop offset="50%" stop-color="#06b6d4"/>
+      
+      <!-- Light (primary) -->
+      <stop offset="100%" stop-color="#45f3ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon -->
+  <g transform="translate(10,25) scale(0.75)">
+    <path d="M40,20 Q60,0 80,20 T120,20 T100,60 T60,60 T40,20"
+      fill="none"
+      stroke="url(#brandGradient)"
+      stroke-width="12"
+      stroke-linecap="round"/>
+
+    <circle cx="40" cy="20" r="14" fill="url(#brandGradient)"/>
+    <circle cx="80" cy="20" r="14" fill="url(#brandGradient)" opacity="0.85"/>
+    <circle cx="40" cy="60" r="14" fill="url(#brandGradient)"/>
+
+    <path d="M40,60 L70,60 Q90,60 90,40 L90,20"
+      fill="none"
+      stroke="url(#brandGradient)"
+      stroke-width="12"
+      stroke-linecap="round"/>
+  </g>
+
+  <!-- Text -->
+  <text x="130" y="75"
+        font-family="Segoe UI, Arial, sans-serif"
+        font-size="48"
+        letter-spacing="-1">
+
+    <!-- Heading -->
+    <tspan font-weight="800" fill="#0f172a">Pure</tspan>
+
+    <!-- أكثر هدوء من الأساسي -->
+    <tspan font-weight="600" fill="#06b6d4">Syntax</tspan>
+
+  </text>
+
+</svg>
