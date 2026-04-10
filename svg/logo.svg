@@ -39,10 +39,10 @@
         letter-spacing="-1">
 
     <!-- Heading -->
-    <tspan font-weight="800" fill="#0f172a">Pure</tspan>
+    <tspan font-weight="800" fill="#ffffff">Pure</tspan>
 
     <!-- أكثر هدوء من الأساسي -->
-    <tspan font-weight="600" fill="#06b6d4">Syntax</tspan>
+    <tspan font-weight="600" fill="#45f3ff">Syntax</tspan>
 
   </text>
 
