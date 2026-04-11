@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. VARIABLES & THEMING
-   ========================================================================== */
+/* VARIABLES & THEMING */
 
 :root {
   /* Brand Colors */
@@ -31,25 +29,42 @@
   --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08);
 }
 
-/* Dark Theme via Checkbox Hack */
-html:has(#theme-toggle:checked) {
-  --clr-bg: #0f172a;
-  --clr-bg-alt: #1e293b;
-  --clr-text: #94a3b8;
-  --clr-heading: #f8fafc;
-  --clr-border: #334155;
-  --clr-img-border: rgba(248, 250, 252, 0.05);
-  --clr-card-bg: #1e293b;
-  --clr-card-hover: #334155;
-  --clr-primary-text: #2dd4bf;
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 8px 15px -3px rgba(0, 0, 0, 0.2);
+/* Theme Persistence via System Preferences */
+@media (prefers-color-scheme: dark) {
+  /* Default to dark if system is dark, UNLESS toggle is checked (which means light) */
+  html:not(:has(#theme-toggle:checked)) {
+    --clr-bg: #0f172a;
+    --clr-bg-alt: #1e293b;
+    --clr-text: #94a3b8;
+    --clr-heading: #f8fafc;
+    --clr-border: #334155;
+    --clr-img-border: rgba(248, 250, 252, 0.05);
+    --clr-card-bg: #1e293b;
+    --clr-card-hover: #1f2328;
+    --clr-primary-text: #2dd4bf;
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 15px -3px rgba(0, 0, 0, 0.2);
+  }
 }
 
-/* ==========================================================================
-   2. BASE & RESET
-   ========================================================================== */
+@media (prefers-color-scheme: light) {
+  /* Default to light, UNLESS toggle is checked (which means dark) */
+  html:has(#theme-toggle:checked) {
+    --clr-bg: #0f172a;
+    --clr-bg-alt: #1e293b;
+    --clr-text: #94a3b8;
+    --clr-heading: #f8fafc;
+    --clr-border: #334155;
+    --clr-img-border: rgba(248, 250, 252, 0.05);
+    --clr-card-bg: #1e293b;
+    --clr-card-hover: #334155;
+    --clr-primary-text: #2dd4bf;
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 15px -3px rgba(0, 0, 0, 0.2);
+  }
+}
 
+/* BASE & RESET */
 * {
   margin: 0;
   padding: 0;
@@ -178,7 +193,7 @@ ul {
 
 .btn-primary {
   background-color: var(--clr-primary);
-  color: #ffffff !important;
+  color: #ffffff;
   font-weight: 700;
   box-shadow: var(--shadow-sm);
 }
@@ -255,7 +270,7 @@ ul {
 
 /* Visually hide checkboxes but keep keyboard accessibility (sr-only pattern) */
 .state-toggle {
-  position: absolute;
+  position: fixed;
   width: 1px;
   height: 1px;
   padding: 0;
@@ -287,7 +302,6 @@ body:has(#menu-toggle:focus-visible) .hamburger {
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 0;
   transition: background-color var(--transition);
   height: 80px;
 }
@@ -334,7 +348,7 @@ body:has(#menu-toggle:focus-visible) .hamburger {
   color: var(--clr-primary-text);
 }
 
-/* By default, show Moon (dark mode trigger) */
+/* Theme Icons Toggle */
 .dark-icon {
   display: block;
 }
@@ -342,12 +356,27 @@ body:has(#menu-toggle:focus-visible) .hamburger {
   display: none;
 }
 
-/* When checked (dark mode), show Sun */
 html:has(#theme-toggle:checked) .dark-icon {
   display: none;
 }
 html:has(#theme-toggle:checked) .light-icon {
   display: block;
+}
+
+/* Override icons for Native Dark Mode users */
+@media (prefers-color-scheme: dark) {
+  .dark-icon {
+    display: none;
+  }
+  .light-icon {
+    display: block;
+  }
+  html:has(#theme-toggle:checked) .dark-icon {
+    display: block;
+  }
+  html:has(#theme-toggle:checked) .light-icon {
+    display: none;
+  }
 }
 
 /* Desktop Theme Toggler */
@@ -373,7 +402,7 @@ html:has(#theme-toggle:checked) .light-icon {
   height: 3px;
   background-color: var(--clr-heading);
   border-radius: 3px;
-  transition: all 0.2s ease-in-out;
+  transition: var(--transition);
   transform-origin: center center;
   position: relative;
 }
@@ -433,6 +462,17 @@ body:has(#menu-toggle:checked) .nav-menu {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Auto-close nav when a link receives focus (No-JS Hack) */
+body:has(.nav-links a:focus) .nav-menu {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    visibility 0s 0.3s,
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .nav-links {
@@ -501,7 +541,7 @@ body:has(#menu-toggle:checked) .nav-menu {
     gap: 2.5rem;
   }
   .nav-links a i {
-    display: none !important;
+    display: none;
   }
 
   .nav-actions {
@@ -514,9 +554,7 @@ body:has(#menu-toggle:checked) .nav-menu {
   }
 }
 
-/* ==========================================================================
-   6. HERO SECTION
-   ========================================================================== */
+/* HERO SECTION */
 .hero {
   min-height: calc(100vh - 80px);
   min-height: calc(100dvh - 80px);
@@ -542,7 +580,6 @@ body:has(#menu-toggle:checked) .nav-menu {
 
 .hero-title {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
 }
 
 .hero-title span {
@@ -593,20 +630,21 @@ body:has(#menu-toggle:checked) .nav-menu {
   }
 }
 
-/* ==========================================================================
-   7. STATS SECTION
-   ========================================================================== */
-/* ==========================================================================
-   7. STATS SECTION
-   ========================================================================== */
+/* STATS SECTION */
 .stats {
   background-image: url("../imgs/stats copy.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 6rem 0;
   color: #fff;
   position: relative;
+}
+
+/* Prevent iOS scrolling lag with fixed backgrounds */
+@supports (-webkit-touch-callout: none) {
+  .stats {
+    background-attachment: scroll;
+  }
 }
 
 .stats .overlay {
@@ -681,7 +719,6 @@ body:has(#menu-toggle:checked) .nav-menu {
   font-family: var(--font-heading);
   font-size: 3rem;
   font-weight: 800;
-  color: #fff; /* Simplified to solid white */
   margin-bottom: 0.5rem;
 }
 
@@ -691,14 +728,11 @@ body:has(#menu-toggle:checked) .nav-menu {
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.7); /* Subtle greyish-white */
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Responsive Stats */
 @media (max-width: 768px) {
-  .stats {
-    padding: 4rem 0;
-  }
   .stat-item {
     padding: 2.5rem 1.5rem;
   }
@@ -707,9 +741,7 @@ body:has(#menu-toggle:checked) .nav-menu {
   }
 }
 
-/* ==========================================================================
-   8. SERVICES SECTION
-   ========================================================================== */
+/* SERVICES SECTION */
 .service-card {
   text-align: center;
 }
@@ -737,11 +769,7 @@ body:has(#menu-toggle:checked) .nav-menu {
   font-size: 1.5rem;
 }
 
-/* Contextual Media Query for Services (inherits Base Grid rules) */
-
-/* ==========================================================================
-   9. PORTFOLIO SECTION
-   ========================================================================== */
+/* PORTFOLIO SECTION */
 .portfolio-card {
   background-color: var(--clr-card-bg);
   border-radius: var(--border-radius) var(--border-radius) 0 0;
@@ -784,9 +812,7 @@ body:has(#menu-toggle:checked) .nav-menu {
   margin-top: 3rem;
 }
 
-/* ==========================================================================
-   10. TESTIMONIALS SECTION
-   ========================================================================== */
+/* TESTIMONIALS SECTION */
 .testimonial-card {
   display: flex;
   flex-direction: column;
@@ -830,11 +856,7 @@ body:has(#menu-toggle:checked) .nav-menu {
   color: var(--clr-text);
 }
 
-/* Contextual Media Query for Testimonials (inherits Base Grid rules) */
-
-/* ==========================================================================
-   11. PRICING SECTION
-   ========================================================================== */
+/* PRICING SECTION */
 .pricing-card {
   text-align: center;
   position: relative;
@@ -864,7 +886,6 @@ body:has(#menu-toggle:checked) .nav-menu {
 
 .pricing-card h3 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
 }
 
 .price {
@@ -921,19 +942,19 @@ body:has(#menu-toggle:checked) .nav-menu {
   }
 }
 
-/* ==========================================================================
-   12. BLOG SECTION
-   ========================================================================== */
+/* BLOG SECTION */
 .blog-card {
   padding: 0;
   overflow: hidden;
 }
 
 .blog-image {
-  height: 200px;
-  border: none;
-  border-bottom: 1px solid var(--clr-border);
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  padding: 0.5rem;
+}
+.blog-image img {
+  display: block;
+  max-width: 100%;
+  border-radius: 8px;
 }
 
 .blog-content {
@@ -953,7 +974,6 @@ body:has(#menu-toggle:checked) .nav-menu {
 
 .blog-content h3 {
   font-size: 1.25rem;
-  margin-bottom: 1rem;
 }
 
 .blog-content p {
@@ -981,16 +1001,33 @@ body:has(#menu-toggle:checked) .nav-menu {
   transform: translateX(5px);
 }
 
-/* Contextual Media Query for Blog (inherits Base Grid rules) */
+/* CONTACT SECTION */
+.contact .container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
-/* ==========================================================================
-   13. CONTACT SECTION
-   ========================================================================== */
+.contact-info,
+.contact-form-wrapper {
+  flex: 1 1 0%;
+}
+.contact-info {
+  text-align: center;
+}
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
 .contact-method {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .contact-icon {
@@ -1004,6 +1041,7 @@ body:has(#menu-toggle:checked) .nav-menu {
   font-size: 1.25rem;
   color: var(--clr-primary-text);
   border: 1px solid var(--clr-border);
+  flex-shrink: 0;
 }
 
 .contact-method h4 {
@@ -1012,7 +1050,7 @@ body:has(#menu-toggle:checked) .nav-menu {
 
 .contact-form-wrapper {
   background-color: var(--clr-card-bg);
-  padding: 2.5rem;
+  padding: 1rem;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-md);
   border: 1px solid var(--clr-border);
@@ -1042,6 +1080,10 @@ body:has(#menu-toggle:checked) .nav-menu {
   transition: border-color var(--transition);
 }
 
+.form-group textarea {
+  resize: none;
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
@@ -1049,15 +1091,29 @@ body:has(#menu-toggle:checked) .nav-menu {
 }
 
 /* Contextual Media Query for Contact */
-@media (min-width: 1024px) {
-  .contact-form-wrapper {
-    padding: 3rem;
+@media (min-width: 992px) {
+  .contact .container {
+    flex-direction: row;
+  }
+  .contact-info {
+    text-align: left;
+  }
+  .contact-details {
+    align-items: flex-start;
+  }
+  .contact-method {
+    flex-direction: row;
+    text-align: left;
   }
 }
 
-/* ==========================================================================
-   14. FOOTER
-   ========================================================================== */
+@media (min-width: 1024px) {
+  .contact-form-wrapper {
+    padding: 2.5rem;
+  }
+}
+
+/* FOOTER */
 .footer {
   background-color: #0f172a;
   color: rgba(255, 255, 255, 0.7);

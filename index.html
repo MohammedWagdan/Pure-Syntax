@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="icon" href="data:," />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pure Syntax Agency | Innovative Digital Solutions</title>
@@ -25,7 +26,6 @@
   <body>
     <!-- Pure CSS State Toggles -->
     <input type="checkbox" id="theme-toggle" class="state-toggle theme-toggle-cb" aria-label="Toggle Dark Mode" />
-    <!-- Mobile Menu Toggle inside header context in CSS, placed here conceptually, but typically placing inside/near header makes traversing easier. Wait, if placed at body top, we can style the whole body when menu opens, e.g., prevent scroll. But styling header is easier if inside header. Let's put both top body. -->
     <input type="checkbox" id="menu-toggle" class="state-toggle menu-toggle-cb" aria-label="Toggle Mobile Menu" />
 
     <!-- Header -->
@@ -100,7 +100,7 @@
       </section>
 
       <!-- Stats Section -->
-      <section id="stats" class="stats">
+      <section id="stats" class="stats section">
         <div class="overlay"></div>
         <div class="container stats-container">
           <div class="stat-item">
@@ -184,8 +184,8 @@
                 <img src="imgs/cat-07.jpg" alt="Corporate Website Redesign Landing Page" />
               </div>
               <div class="portfolio-info">
-                <h3>E-commerce Platform</h3>
-                <span>Web Development</span>
+                <h3>Corporate Website</h3>
+                <span>Web Design</span>
               </div>
             </div>
             <div class="portfolio-card">
@@ -193,8 +193,8 @@
                 <img src="imgs/cat-05.jpg" alt="Mobile Banking User Journey Architecture" />
               </div>
               <div class="portfolio-info">
-                <h3>E-commerce Platform</h3>
-                <span>Web Development</span>
+                <h3>Mobile Banking App</h3>
+                <span>UI/UX Design</span>
               </div>
             </div>
           </div>
@@ -329,8 +329,8 @@
           </div>
           <div class="blog-grid grid-3-col">
             <article class="card blog-card">
-              <div class="image-placeholder blog-image">
-                <i class="fa-regular fa-image"></i>
+              <div class="blog-image">
+                <img src="/imgs/cat-05.jpg" alt="" />
               </div>
               <div class="blog-content">
                 <span class="blog-category">Web Development</span>
@@ -340,8 +340,8 @@
               </div>
             </article>
             <article class="card blog-card">
-              <div class="image-placeholder blog-image">
-                <i class="fa-regular fa-compass"></i>
+              <div class="blog-image">
+                <img src="/imgs/cat-06.jpg" alt="" />
               </div>
               <div class="blog-content">
                 <span class="blog-category">UI/UX Design</span>
@@ -351,8 +351,8 @@
               </div>
             </article>
             <article class="card blog-card">
-              <div class="image-placeholder blog-image">
-                <i class="fa-solid fa-server"></i>
+              <div class="blog-image">
+                <img src="/imgs/cat-07.jpg" alt="" />
               </div>
               <div class="blog-content">
                 <span class="blog-category">Cloud</span>
@@ -367,9 +367,9 @@
 
       <!-- Contact Section -->
       <section id="contact" class="contact section section-alt">
-        <div class="container grid-2-col">
+        <div class="container">
           <div class="contact-info">
-            <div class="section-header left-aligned">
+            <div class="section-header">
               <h2>Let's Talk</h2>
               <p>
                 Have a project in mind? We'd love to hear from you. Reach out and our team will get back to you shortly.
