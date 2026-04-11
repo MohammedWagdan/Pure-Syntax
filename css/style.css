@@ -1050,10 +1050,14 @@ body:has(.nav-links a:focus) .nav-menu {
 
 .contact-form-wrapper {
   background-color: var(--clr-card-bg);
-  padding: 1rem;
+  padding: clamp(1.25rem, 5vw, 2.5rem);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-md);
   border: 1px solid var(--clr-border);
+}
+
+.contact-form-wrapper .btn.btn-primary {
+  width: 100%;
 }
 
 .form-group {
@@ -1105,11 +1109,8 @@ body:has(.nav-links a:focus) .nav-menu {
     flex-direction: row;
     text-align: left;
   }
-}
-
-@media (min-width: 1024px) {
-  .contact-form-wrapper {
-    padding: 2.5rem;
+  .contact-form-wrapper .btn.btn-primary {
+    width: fit-content;
   }
 }
 
