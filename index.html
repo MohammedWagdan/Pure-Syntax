@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -25,53 +25,53 @@
   </head>
   <body>
     <!-- Pure CSS State Toggles -->
-    <input type="checkbox" id="theme-toggle" class="state-toggle theme-toggle-cb" aria-label="Toggle Dark Mode" />
-    <input type="checkbox" id="menu-toggle" class="state-toggle menu-toggle-cb" aria-label="Toggle Mobile Menu" />
+    <input type="checkbox" id="theme-toggle" class="state-toggle" aria-label="Toggle Dark Mode" />
+    <input type="checkbox" id="menu-toggle" class="state-toggle" aria-label="Toggle Mobile Menu" />
 
     <!-- Header -->
     <header class="header">
-      <div class="container header-container">
-        <!-- Logo Placeholder -->
-        <div class="logo">Pure<span>Syntax</span></div>
+      <div class="container">
+        <!-- Logo -->
+        <a href="/" class="logo">Pure<span>Syntax</span></a>
 
         <!-- Mobile Action Toggles wrapper -->
-        <div class="mobile-actions">
+        <div class="actions">
           <!-- Theme Toggler -->
-          <label for="theme-toggle" class="theme-toggler">
-            <i class="fa-solid fa-moon dark-icon"></i>
-            <i class="fa-solid fa-sun light-icon"></i>
+          <label for="theme-toggle" class="theme-toggler" aria-label="Toggle display theme">
+            <i class="fa-solid fa-moon dark-icon" aria-hidden="true"></i>
+            <i class="fa-solid fa-sun light-icon" aria-hidden="true"></i>
           </label>
 
           <!-- Hamburger Menu -->
-          <label for="menu-toggle" class="hamburger">
-            <span class="bar"></span>
+          <label for="menu-toggle" class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span class="bar" aria-hidden="true"></span>
           </label>
         </div>
 
         <!-- Navigation Links -->
-        <nav class="nav-menu">
-          <ul class="nav-links">
+        <nav class="nav">
+          <ul class="links">
             <li>
-              <a href="#services"><i class="fa-solid fa-cubes"></i>Services</a>
+              <a href="#services"><i class="fa-solid fa-cubes" aria-hidden="true"></i>Services</a>
             </li>
             <li>
-              <a href="#portfolio"><i class="fa-solid fa-layer-group"></i>Portfolio</a>
+              <a href="#portfolio"><i class="fa-solid fa-layer-group" aria-hidden="true"></i>Portfolio</a>
             </li>
             <li>
-              <a href="#pricing"><i class="fa-solid fa-tags"></i>Pricing</a>
+              <a href="#pricing"><i class="fa-solid fa-tags" aria-hidden="true"></i>Pricing</a>
             </li>
             <li>
-              <a href="#blog"><i class="fa-solid fa-newspaper"></i>Blog</a>
+              <a href="#blog"><i class="fa-solid fa-newspaper" aria-hidden="true"></i>Blog</a>
             </li>
             <li>
-              <a href="#contact"><i class="fa-solid fa-phone"></i>Contact</a>
+              <a href="#contact"><i class="fa-solid fa-phone" aria-hidden="true"></i>Contact</a>
             </li>
           </ul>
           <div class="nav-actions">
             <!-- Standard desktop theme toggler -->
-            <label for="theme-toggle" class="theme-toggler desktop-theme-toggler">
-              <i class="fa-solid fa-moon dark-icon"></i>
-              <i class="fa-solid fa-sun light-icon"></i>
+            <label for="theme-toggle" class="theme-toggler desktop-theme-toggler" aria-label="Toggle display theme">
+              <i class="fa-solid fa-moon dark-icon" aria-hidden="true"></i>
+              <i class="fa-solid fa-sun light-icon" aria-hidden="true"></i>
             </label>
             <a href="#contact" class="btn btn-primary">Book Free Consultation</a>
           </div>
@@ -82,19 +82,19 @@
     <main>
       <!-- Hero Section -->
       <section id="hero" class="hero section">
-        <div class="container hero-container">
-          <div class="hero-content">
-            <h1 class="hero-title">Shaping the Future of Digital <span>Experiences</span></h1>
-            <p class="hero-subtitle">
+        <div class="container">
+          <div class="content">
+            <h1 class="title">Shaping the Future of Digital <span>Experiences</span></h1>
+            <p class="subtitle">
               We craft stunning websites, robust cloud solutions, and unforgettable UI/UX designs to elevate your brand.
             </p>
-            <div class="hero-cta">
+            <div class="btn-group">
               <a href="#contact" class="btn btn-primary">Get Started</a>
               <a href="#portfolio" class="btn btn-secondary">View Our Work</a>
             </div>
           </div>
-          <div class="hero-visual">
-            <img src="svg/hero.svg" alt="" />
+          <div class="visual">
+            <img src="svg/hero.svg" alt="Abstract illustration of a digital landscape" />
           </div>
         </div>
       </section>
@@ -102,26 +102,26 @@
       <!-- Stats Section -->
       <section id="stats" class="stats section">
         <div class="overlay"></div>
-        <div class="container stats-container">
-          <div class="stat-item">
-            <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
-            <span class="stat-number">250+</span>
-            <span class="stat-label">Projects Completed</span>
+        <div class="container stats-grid">
+          <div class="item">
+            <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
+            <span class="number">250+</span>
+            <span class="label">Projects Completed</span>
           </div>
-          <div class="stat-item">
-            <div class="stat-icon"><i class="fa-solid fa-face-smile"></i></div>
-            <span class="stat-number">120+</span>
-            <span class="stat-label">Happy Clients</span>
+          <div class="item">
+            <div class="icon"><i class="fa-solid fa-face-smile"></i></div>
+            <span class="number">120+</span>
+            <span class="label">Happy Clients</span>
           </div>
-          <div class="stat-item">
-            <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
-            <span class="stat-number">99%</span>
-            <span class="stat-label">Success Rate</span>
+          <div class="item">
+            <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+            <span class="number">99%</span>
+            <span class="label">Success Rate</span>
           </div>
-          <div class="stat-item">
-            <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
-            <span class="stat-number">15+</span>
-            <span class="stat-label">Awards Won</span>
+          <div class="item">
+            <div class="icon"><i class="fa-solid fa-trophy"></i></div>
+            <span class="number">15+</span>
+            <span class="label">Awards Won</span>
           </div>
         </div>
       </section>
@@ -133,21 +133,23 @@
             <h2>Our Services</h2>
             <p>Comprehensive solutions tailored to your business needs.</p>
           </div>
-          <div class="services-grid grid-3-col">
-            <div class="card service-card">
-              <div class="card-icon"><i class="fa-solid fa-code"></i></div>
-              <h3>Web Development</h3>
-              <p>High-performance, scalable websites built using the latest modern web technologies.</p>
+          <div class="services-grid">
+            <div class="card service">
+              <div class="icon"><i class="fa-solid fa-code"></i></div>
+              <h3 class="title">Web Development</h3>
+              <p class="desc">High-performance, scalable websites built using the latest modern web technologies.</p>
             </div>
-            <div class="card service-card">
-              <div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div>
-              <h3>UI/UX Design</h3>
-              <p>Intuitive, user-centric designs that engage your audience and drive conversions.</p>
+            <div class="card service">
+              <div class="icon"><i class="fa-solid fa-pen-nib"></i></div>
+              <h3 class="title">UI/UX Design</h3>
+              <p class="desc">Intuitive, user-centric designs that engage your audience and drive conversions.</p>
             </div>
-            <div class="card service-card">
-              <div class="card-icon"><i class="fa-solid fa-cloud"></i></div>
-              <h3>Cloud Solutions</h3>
-              <p>Secure, reliable cloud infrastructure and deployment to power your modern applications.</p>
+            <div class="card service">
+              <div class="icon"><i class="fa-solid fa-cloud"></i></div>
+              <h3 class="title">Cloud Solutions</h3>
+              <p class="desc">
+                Secure, reliable cloud infrastructure and deployment to power your modern applications.
+              </p>
             </div>
           </div>
         </div>
@@ -160,41 +162,41 @@
             <h2>Selected Work</h2>
             <p>A glimpse into our recent creative ventures.</p>
           </div>
-          <div class="portfolio-grid grid-4-col">
-            <div class="portfolio-card">
-              <div class="portfolio-image">
-                <img src="imgs/cat-05.jpg" alt="Fintech Application Overview Interface" />
+          <div class="portfolio-grid">
+            <div class="card project">
+              <div class="image">
+                <img src="" alt="Fintech Application Overview Interface" />
               </div>
-              <div class="portfolio-info">
-                <h3>Fintech Application</h3>
-                <span>UI/UX Design</span>
-              </div>
-            </div>
-            <div class="portfolio-card">
-              <div class="portfolio-image">
-                <img src="imgs/cat-06.jpg" alt="E-commerce Dashboard Prototype" />
-              </div>
-              <div class="portfolio-info">
-                <h3>E-commerce Platform</h3>
-                <span>Web Development</span>
+              <div class="info">
+                <h3 class="title">Fintech Application</h3>
+                <span class="category">UI/UX Design</span>
               </div>
             </div>
-            <div class="portfolio-card">
-              <div class="portfolio-image">
-                <img src="imgs/cat-07.jpg" alt="Corporate Website Redesign Landing Page" />
+            <div class="card project">
+              <div class="image">
+                <img src="" alt="E-commerce Dashboard Prototype" />
               </div>
-              <div class="portfolio-info">
-                <h3>Corporate Website</h3>
-                <span>Web Design</span>
+              <div class="info">
+                <h3 class="title">E-commerce Platform</h3>
+                <span class="category">Web Development</span>
               </div>
             </div>
-            <div class="portfolio-card">
-              <div class="portfolio-image">
-                <img src="imgs/cat-05.jpg" alt="Mobile Banking User Journey Architecture" />
+            <div class="card project">
+              <div class="image">
+                <img src="" alt="Corporate Website Redesign Landing Page" />
               </div>
-              <div class="portfolio-info">
-                <h3>Mobile Banking App</h3>
-                <span>UI/UX Design</span>
+              <div class="info">
+                <h3 class="title">Corporate Website</h3>
+                <span class="category">Web Design</span>
+              </div>
+            </div>
+            <div class="card project">
+              <div class="image">
+                <img src="" alt="Mobile Banking User Journey Architecture" />
+              </div>
+              <div class="info">
+                <h3 class="title">Mobile Banking App</h3>
+                <span class="category">UI/UX Design</span>
               </div>
             </div>
           </div>
@@ -211,56 +213,56 @@
             <h2>Trusted by Innovators</h2>
             <p>See what our amazing clients have to say about working with us.</p>
           </div>
-          <div class="testimonials-grid grid-4-col">
+          <div class="testimonials-grid">
             <!-- Testimonial 1 -->
-            <div class="card testimonial-card">
+            <div class="card testimonial">
               <div class="stars">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
                 ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
-              <p class="testimonial-text">
+              <p class="text">
                 "Pure Syntax transformed our online presence entirely. Their attention to detail and design aesthetics
                 are unmatched."
               </p>
-              <div class="client-info">
-                <img src="imgs/avatar-04.png" alt="Sarah Jenkins, CEO of TechGrowth" />
-                <div class="client-details">
-                  <h4>Sarah Jenkins</h4>
-                  <span>CEO, TechGrowth</span>
+              <div class="client">
+                <img src="" alt="" class="avatar" />
+                <div class="details">
+                  <h4 class="name">Sarah Jenkins</h4>
+                  <span class="role">CEO, TechGrowth</span>
                 </div>
               </div>
             </div>
             <!-- Testimonial 2 -->
-            <div class="card testimonial-card">
+            <div class="card testimonial">
               <div class="stars">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
                 ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
-              <p class="testimonial-text">
+              <p class="text">
                 "The development phase was incredibly smooth, and the modern UI definitely drove more engagement."
               </p>
-              <div class="client-info">
-                <img src="imgs/avatar-05.png" alt="Mark Stevenson, CTO of Nexus Corp" />
-                <div class="client-details">
-                  <h4>Mark Stevenson</h4>
-                  <span>CTO, Nexus Corp</span>
+              <div class="client">
+                <img src="" alt="" class="avatar" />
+                <div class="details">
+                  <h4 class="name">Mark Stevenson</h4>
+                  <span class="role">CTO, Nexus Corp</span>
                 </div>
               </div>
             </div>
             <!-- Testimonial 3 -->
-            <div class="card testimonial-card">
+            <div class="card testimonial">
               <div class="stars">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
                 ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
               </div>
-              <p class="testimonial-text">
+              <p class="text">
                 "A fantastic partner for cloud migrations. Highly recommended for any complex technical challenges."
               </p>
-              <div class="client-info">
-                <img src="imgs/avatar-06.png" alt="Emily Chen, Founder of InnovateHQ" />
-                <div class="client-details">
-                  <h4>Emily Chen</h4>
-                  <span>Founder, InnovateHQ</span>
+              <div class="client">
+                <img src="" alt="" class="avatar" />
+                <div class="details">
+                  <h4 class="name">Emily Chen</h4>
+                  <span class="role">Founder, InnovateHQ</span>
                 </div>
               </div>
             </div>
@@ -275,13 +277,13 @@
             <h2>Transparent Pricing</h2>
             <p>Choose a plan that scales with your growth.</p>
           </div>
-          <div class="pricing-grid grid-3-col">
+          <div class="pricing-grid">
             <!-- Basic -->
-            <div class="card pricing-card">
-              <h3>Essential</h3>
+            <div class="card plan">
+              <h3 class="title">Essential</h3>
               <div class="price"><span>$</span>999</div>
-              <p class="pricing-desc">Perfect for small startups looking to establish an online presence.</p>
-              <ul class="pricing-features">
+              <p class="desc">Perfect for small startups looking to establish an online presence.</p>
+              <ul class="features">
                 <li><i class="fa-solid fa-check"></i> 5 Pages Website</li>
                 <li><i class="fa-solid fa-check"></i> Basic SEO Optimization</li>
                 <li><i class="fa-solid fa-check"></i> Responsive Design</li>
@@ -290,12 +292,12 @@
               <a href="#contact" class="btn btn-secondary btn-full">Choose Plan</a>
             </div>
             <!-- Popular -->
-            <div class="card pricing-card popular">
+            <div class="card plan popular">
               <div class="badge">Most Popular</div>
-              <h3>Professional</h3>
+              <h3 class="title">Professional</h3>
               <div class="price"><span>$</span>2499</div>
-              <p class="pricing-desc">Comprehensive solutions for growing digital businesses.</p>
-              <ul class="pricing-features">
+              <p class="desc">Comprehensive solutions for growing digital businesses.</p>
+              <ul class="features">
                 <li><i class="fa-solid fa-check"></i> 15 Pages Website</li>
                 <li><i class="fa-solid fa-check"></i> Advanced SEO</li>
                 <li><i class="fa-solid fa-check"></i> Custom UI/UX Design</li>
@@ -304,11 +306,11 @@
               <a href="#contact" class="btn btn-primary btn-full">Choose Plan</a>
             </div>
             <!-- Enterprise -->
-            <div class="card pricing-card">
-              <h3>Enterprise</h3>
+            <div class="card plan">
+              <h3 class="title">Enterprise</h3>
               <div class="price"><span>$</span>4999+</div>
-              <p class="pricing-desc">Full-cycle development for complex enterprise necessities.</p>
-              <ul class="pricing-features">
+              <p class="desc">Full-cycle development for complex enterprise necessities.</p>
+              <ul class="features">
                 <li><i class="fa-solid fa-check"></i> Unlimited Pages</li>
                 <li><i class="fa-solid fa-check"></i> Dedicated Support 24/7</li>
                 <li><i class="fa-solid fa-check"></i> Full Cloud Architecture</li>
@@ -327,38 +329,38 @@
             <h2>Latest Insights</h2>
             <p>Stay updated with our thoughts on technology and design.</p>
           </div>
-          <div class="blog-grid grid-3-col">
-            <article class="card blog-card">
-              <div class="blog-image">
-                <img src="/imgs/cat-05.jpg" alt="" />
+          <div class="blog-grid">
+            <article class="card article">
+              <div class="image">
+                <img src="" alt="" />
               </div>
-              <div class="blog-content">
-                <span class="blog-category">Web Development</span>
-                <h3>The Future of CSS in 2026</h3>
-                <p>Exploring CSS variables and intrinsic layouts replacing old-school frameworks.</p>
-                <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </article>
-            <article class="card blog-card">
-              <div class="blog-image">
-                <img src="/imgs/cat-06.jpg" alt="" />
-              </div>
-              <div class="blog-content">
-                <span class="blog-category">UI/UX Design</span>
-                <h3>Designing for Emotion</h3>
-                <p>How combining typography, color, and interactions creates lasting impressions.</p>
-                <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              <div class="content">
+                <span class="category">Web Development</span>
+                <h3 class="title">The Future of CSS in 2026</h3>
+                <p class="desc">Exploring CSS variables and intrinsic layouts replacing old-school frameworks.</p>
+                <a href="#" class="link">Read More <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </article>
-            <article class="card blog-card">
-              <div class="blog-image">
-                <img src="/imgs/cat-07.jpg" alt="" />
+            <article class="card article">
+              <div class="image">
+                <img src="" alt="" />
               </div>
-              <div class="blog-content">
-                <span class="blog-category">Cloud</span>
-                <h3>Scaling without Limits</h3>
-                <p>The ultimate guide to building serverless applications for scaling on demand.</p>
-                <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              <div class="content">
+                <span class="category">UI/UX Design</span>
+                <h3 class="title">Designing for Emotion</h3>
+                <p class="desc">How combining typography, color, and interactions creates lasting impressions.</p>
+                <a href="#" class="link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </article>
+            <article class="card article">
+              <div class="image">
+                <img src="" alt="" />
+              </div>
+              <div class="content">
+                <span class="category">Cloud</span>
+                <h3 class="title">Scaling without Limits</h3>
+                <p class="desc">The ultimate guide to building serverless applications for scaling on demand.</p>
+                <a href="#" class="link">Read More <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </article>
           </div>
@@ -368,54 +370,52 @@
       <!-- Contact Section -->
       <section id="contact" class="contact section section-alt">
         <div class="container">
-          <div class="contact-info">
+          <div class="info">
             <div class="section-header">
               <h2>Let's Talk</h2>
               <p>
                 Have a project in mind? We'd love to hear from you. Reach out and our team will get back to you shortly.
               </p>
             </div>
-            <div class="contact-details">
-              <div class="contact-method">
-                <div class="contact-icon">
-                  <i class="fa-solid fa-envelope"></i>
-                </div>
-                <div>
-                  <h4>Email Us</h4>
-                  <span>hello@puresyntax.agency</span>
-                </div>
-              </div>
-              <div class="contact-method">
-                <div class="contact-icon">
-                  <i class="fa-solid fa-location-dot"></i>
-                </div>
-                <div>
-                  <h4>Our Location</h4>
-                  <span>123 Innovation Drive, Tech City, USA</span>
+
+            <div class="details">
+              <div class="method">
+                <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="text">
+                  <h3 class="title">Email Us</h3>
+                  <a href="mailto:hello@puresyntax.agency" class="val">hello@puresyntax.agency</a>
                 </div>
               </div>
-              <div class="contact-method">
-                <div class="contact-icon">
-                  <i class="fa-solid fa-phone"></i>
+
+              <div class="method">
+                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="text">
+                  <h3 class="title">Our Location</h3>
+                  <span class="val">123 Innovation Drive, Tech City, USA</span>
                 </div>
-                <div>
-                  <h4>Call Us</h4>
-                  <span>+1 (555) 123-4567</span>
+              </div>
+
+              <div class="method">
+                <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="text">
+                  <h3 class="title">Call Us</h3>
+                  <a href="tel:+15551234567" class="val">+1 (555) 123-4567</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="contact-form-wrapper">
-            <form class="contact-form">
-              <div class="form-group">
+
+          <div class="form-wrapper">
+            <form action="#" method="POST">
+              <div class="group">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" placeholder="John Doe" required />
               </div>
-              <div class="form-group">
+              <div class="group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" placeholder="john@example.com" required />
               </div>
-              <div class="form-group">
+              <div class="group">
                 <label for="message">Your Message</label>
                 <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
               </div>
@@ -429,44 +429,44 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <div class="footer-top grid-4-col">
-          <div class="footer-brand">
-            <div class="logo">Pure<span>Syntax</span></div>
-            <p>Elevating brands through strategic design and robust development.</p>
-            <div class="social-links">
+        <div class="top">
+          <div class="brand">
+            <a href="/" class="logo">Pure<span>Syntax</span></a>
+            <p class="desc">Elevating brands through strategic design and robust development.</p>
+            <div class="socials">
               <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
               <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
               <a href="#" aria-label="Github"><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
-          <div class="footer-links">
-            <h4>Company</h4>
-            <ul>
+          <div class="links-group">
+            <h4 class="title">Company</h4>
+            <ul class="list">
               <li><a href="#">About Us</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#portfolio">Our Work</a></li>
               <li><a href="#blog">Blog</a></li>
             </ul>
           </div>
-          <div class="footer-links">
-            <h4>Resources</h4>
-            <ul>
+          <div class="links-group">
+            <h4 class="title">Resources</h4>
+            <ul class="list">
               <li><a href="#">Help Center</a></li>
               <li><a href="#">Careers</a></li>
               <li><a href="#">Case Studies</a></li>
               <li><a href="#">Pricing</a></li>
             </ul>
           </div>
-          <div class="footer-links">
-            <h4>Legal</h4>
-            <ul>
+          <div class="links-group">
+            <h4 class="title">Legal</h4>
+            <ul class="list">
               <li><a href="#">Privacy Policy</a></li>
               <li><a href="#">Terms of Service</a></li>
               <li><a href="#">Cookie Policy</a></li>
             </ul>
           </div>
         </div>
-        <div class="footer-bottom">
+        <div class="bottom">
           <p>&copy; 2026 Pure Syntax Agency. All rights reserved.</p>
         </div>
       </div>
